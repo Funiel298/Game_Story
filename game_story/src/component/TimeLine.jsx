@@ -7,7 +7,7 @@ const Timeline = ({time, setTime}) => {
     return (
         <div className="fixed z-50 bottom-0 left-0 w-full p-10 flex flex-row items-center justify-around  shadow-md">
             {timeMarkers.map((marker) => (
-                <button onClick={()=>setTime(marker)} className={`w-[4rem] flex h-[4rem] duration-300 rounded-full ${marker == time ? 'bg-black text-white' : ' text-black/60 hover:text-black'}`}>
+                <button key={marker} onClick={()=>setTime(marker)} className={`w-[4rem] flex h-[4rem] duration-300 rounded-full ${marker == time ? 'bg-black text-white' : ' text-black/60 hover:text-black'}`}>
                     <span className=" font-light m-auto  ">
                         {marker}
                     </span>

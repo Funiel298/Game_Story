@@ -1,59 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Funkydori&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-
-/* Example CSS for applying fonts */
 #font-1940 {
-    font-family: 'Bebas Neue', sans-serif;
-  }
-  
-  #font-1950 {
-    font-family: 'Raleway', sans-serif;
-  }
-  
-  #font-1960 {
-    font-family: 'Rock Salt', cursive;
-  }
-  
-  #font-1970 {
-    font-family: 'Funkydori', sans-serif;
-  }
-  
-  #font-1980 {
-    font-family: 'Press Start 2P', cursive;
-  }
-  
-  #font-1990 {
-    font-family: 'Comic Sans MS', cursive;
-  }
-  
-  #font-2000 {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  #font-2010 {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  #font-2020 {
-    font-family: 'Poppins', sans-serif;
-  }
-  
+    @apply font-[Bodoni+Moda];
+}
 
+#font-1950 {
+    @apply font-[Pacifico];
+}
+
+#font-1960 {
+    @apply font-[Poppins];
+}
+
+#font-1970 {
+    @apply font-[Bebas+Neue];
+}
+
+#font-1980 {
+    @apply font-[Press+Start+2P];
+}
+
+#font-1990 {
+    @apply font-[Comic+Neue];
+}
+
+#font-2000 {
+    @apply font-[Arial];
+}
+
+#font-2010 {
+    @apply font-[Roboto];
+}
+
+#font-2020 {
+    @apply font-[Inter];
+}
+
+/* Скрытие скроллбара */
 ::-webkit-scrollbar {
     display: none;
-  }
-  
-  
+}
+
+/* Скрытие дублирующихся иконок */
+.anticon svg {
+    display: none;
+}

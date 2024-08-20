@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import TimeLine from '@/component/TimeLine';
 import Forty from '@/app/pages/1940';
 import Fifty from '@/app/pages/1950';
@@ -27,38 +27,35 @@ const musicTracks = {
 
 export default function Home() {
   const [time, setTime] = useState(1950);
-  const [music, setMusic] = useState(null);
-  const [musicName, setMusicName] = useState("");
   const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const { src, name } = musicTracks[time] || { src: '', name: '' };
+  const musicTracks = useMemo(() => ({
+    1940: { src: '/assets/AprilShower.mp3', name: 'April Shower' },
+    1950: { src: '/assets/1950.mp3', name: 'Music 1950' },
+    1960: { src: '/assets/1960.mp3', name: 'Music 1960' },
+    1970: { src: '/assets/1970.mp3', name: 'Music 1970' },
+    1980: { src: '/assets/1980.mp3', name: 'Music 1980' },
+    1990: { src: '/assets/1990.mp3', name: 'Music 1990' },
+    2000: { src: '/assets/2000.mp3', name: 'Music 2000' },
+    2010: { src: '/assets/2010.mp3', name: 'Music 2010' },
+    2020: { src: '/assets/2020.mp3', name: 'Music 2020' },
+  }), []);
 
-    
+  const { src, name } = musicTracks[time] || { src: '', name: '' };
+  const [music, setMusic] = useState(new Audio(src));
+
+  useEffect(() => {
+    if (music) {
+      music.pause();
+    }
 
     const newMusic = new Audio(src);
     newMusic.loop = true;
-
-    // Debugging
-    console.log("Playing music:", name, "Source:", src);
-
-    newMusic.play().catch((error) => {
-      console.error("Error playing audio:", error);
-    });
-
+    newMusic.play();
     setMusic(newMusic);
-    setMusicName(name);
-
-    if (music) {
-      music.pause();
-      music.src = ''; // Reset the src to avoid memory leaks
-    }
 
     return () => {
-      if (newMusic) {
-        newMusic.pause();
-        newMusic.src = ''; // Clean up audio source
-      }
+      newMusic.pause();
     };
   }, [time]);
 
@@ -72,9 +69,9 @@ export default function Home() {
     }
   }, [isPaused, music]);
 
-  function togglePause() {
-    setIsPaused(!isPaused);
-  }
+  const togglePause = useCallback(() => {
+    setIsPaused(prev => !prev);
+  })
 
   const renderContent = () => {
     switch (time) {
@@ -95,7 +92,7 @@ export default function Home() {
     <div className="flex w-full h-[90svh] justify-center">
       <TimeLine time={time} setTime={setTime} />
       <div className="content-area">
-        <Header musicName={musicName} isPaused={isPaused} togglePause={togglePause} />
+        <Header musicName={name} isPaused={isPaused} togglePause={togglePause} />
         {renderContent()}
       </div>
     </div>

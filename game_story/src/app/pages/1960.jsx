@@ -46,7 +46,7 @@ export default function Sixty() {
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
                 {[1, 2, 3, 4].map(i => (
                     <div key={i} className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
-                    <h1>Hello</h1>
+                      <h1 classname="font-1960">Hello</h1>
                     </div>
                 ))}
                 </div>
