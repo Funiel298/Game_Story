@@ -1,0 +1,1 @@
+A bit lazy to continue this development, planned also to add backend but decided to simplify this project and limit only to frontend development wih react and next. if you r not boring to continue and like my playlist (i hope so), then for sure u can end this website
