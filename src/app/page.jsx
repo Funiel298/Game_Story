@@ -1,6 +1,5 @@
 'use client';
-
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import TimeLine from '@/component/TimeLine';
 import Forty from '@/app/pages/1940';
 import Fifty from '@/app/pages/1950';
@@ -11,7 +10,7 @@ import Ninetee from '@/app/pages/1990';
 import TwoThousand from '@/app/pages/2000';
 import TwoTen from '@/app/pages/2010';
 import TwoTwenty from '@/app/pages/2020';
-import Header from "@/component/Header";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 const musicTracks = {
   1940: { src: '/assets/AprilShower.mp3', name: 'April Shower' },
@@ -28,50 +27,30 @@ const musicTracks = {
 export default function Home() {
   const [time, setTime] = useState(1950);
   const [isPaused, setIsPaused] = useState(false);
+  const audioRef = useRef(null);
 
-  const musicTracks = useMemo(() => ({
-    1940: { src: '/assets/AprilShower.mp3', name: 'April Shower' },
-    1950: { src: '/assets/1950.mp3', name: 'Music 1950' },
-    1960: { src: '/assets/1960.mp3', name: 'Music 1960' },
-    1970: { src: '/assets/1970.mp3', name: 'Music 1970' },
-    1980: { src: '/assets/1980.mp3', name: 'Music 1980' },
-    1990: { src: '/assets/1990.mp3', name: 'Music 1990' },
-    2000: { src: '/assets/2000.mp3', name: 'Music 2000' },
-    2010: { src: '/assets/2010.mp3', name: 'Music 2010' },
-    2020: { src: '/assets/2020.mp3', name: 'Music 2020' },
-  }), []);
-
-  const { src, name } = musicTracks[time] || { src: '', name: '' };
-  const [music, setMusic] = useState(new Audio(src));
+  const { src, name } = useMemo(() => musicTracks[time], [time]);
 
   useEffect(() => {
-    if (music) {
-      music.pause();
+    if (audioRef.current) {
+      audioRef.current.src = src;
+      audioRef.current.play();
     }
-
-    const newMusic = new Audio(src);
-    newMusic.loop = true;
-    newMusic.play();
-    setMusic(newMusic);
-
-    return () => {
-      newMusic.pause();
-    };
-  }, [time]);
+  }, [src]);
 
   useEffect(() => {
-    if (music) {
+    if (audioRef.current) {
       if (isPaused) {
-        music.pause();
+        audioRef.current.pause();
       } else {
-        music.play();
+        audioRef.current.play();
       }
     }
-  }, [isPaused, music]);
+  }, [isPaused]);
 
   const togglePause = useCallback(() => {
     setIsPaused(prev => !prev);
-  })
+  });
 
   const renderContent = () => {
     switch (time) {
@@ -91,9 +70,18 @@ export default function Home() {
   return (
     <div className="flex w-full h-[90svh] justify-center">
       <TimeLine time={time} setTime={setTime} />
-      <div className="content-area">
-        <Header musicName={name} isPaused={isPaused} togglePause={togglePause} />
+      
+      <header className='fixed z-50 top-0 left-0 w-full p-10 flex flex-row items-center justify-around'>
+        <div>{name}</div>
+          <button onClick={togglePause}>
+            {isPaused ? <FaPause /> : <FaPlay />}
+          </button>
+      </header>
+
+      <div className="content-area z-40">
+        
         {renderContent()}
+        <audio ref={audioRef} loop />
       </div>
     </div>
   );

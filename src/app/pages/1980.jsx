@@ -1,5 +1,4 @@
 'use client'
-import Header from "@/component/Header"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect } from "react"
@@ -38,7 +37,7 @@ export default function Eighty() {
 
     return (
         <div>
-            <Header />
+            
             <div ref={triggerRef} className="overflow-hidden">
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
                 {[1, 2, 3, 4].map(i => (

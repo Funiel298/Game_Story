@@ -2,8 +2,7 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect, useRef } from "react"
-import Header from '@/component/Header'
-import Text from '@/component/1940/text'
+import Text from '@/component/1940/Text'
 
 export default function Forty() {
   const sectionRef = useRef(null)
@@ -36,7 +35,6 @@ export default function Forty() {
 
   return (
     <div className="no-scrollbar">
-      <Header />
       <div ref={triggerRef} className="overflow-hidden">
         <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
           {[1, 2, 3, 4].map(i => (
