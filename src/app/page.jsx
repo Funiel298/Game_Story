@@ -34,8 +34,13 @@ export default function Home() {
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.src = src;
-      audioRef.current.play();
+      if (isPaused) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
     }
+
   }, [src]);
 
   useEffect(() => {

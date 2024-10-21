@@ -39,7 +39,7 @@ export default function Forty() {
         <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
           {[1, 2, 3, 4].map(i => (
             <div key={i} id="font-1940" className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
-             <h1 classname="font-1940">Hello</h1>
+             <h1 className="font-1940">Hello</h1>
             </div>
           ))}
         </div>
