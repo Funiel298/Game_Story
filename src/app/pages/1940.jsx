@@ -33,16 +33,34 @@ export default function Forty() {
     }
   }, [])
 
+  const menulist=[
+    'First_Game',
+    'Innovations',
+    'Future_Geniuses'
+  ]
+
   return (
     <div className="no-scrollbar">
-      <div ref={triggerRef} className="overflow-hidden">
-        <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
-          {[1, 2, 3, 4].map(i => (
-            <div key={i} id="font-1940" className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
-             <h1 className="font-1940">Hello</h1>
-            </div>
-          ))}
+      <img className="w-screen h-screen object-cover fixed top-0 left-0 z-0" src="https://www.shutterstock.com/image-photo/old-newspaper-background-black-white-600nw-2476202121.jpg" alt="" />
+      <div ref={triggerRef} className="overflow-hidden ">
+
+        {/* Menu */}
+        <div className="m-80 border-8 p-4 border-black">
+          <h1 id="font-1940" className="text-7xl">Menu</h1>
+          <div className="flex flex-col">
+            {menulist.map((item)=>(
+              <a id="font-p-1940" className="mt-1 text-lg" href={`#${item}`}>{item}</a>
+            ))}
+          </div>
         </div>
+
+
+        {/* FirstGame */}
+
+        <div>
+          
+        </div>
+          
       </div>
     </div>
   )

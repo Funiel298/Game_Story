@@ -25,7 +25,7 @@ const musicTracks = {
 };
 
 export default function Home() {
-  const [time, setTime] = useState(1950);
+  const [time, setTime] = useState(1940);
   const [isPaused, setIsPaused] = useState(false);
   const audioRef = useRef(null);
 
@@ -77,7 +77,7 @@ export default function Home() {
       <TimeLine time={time} setTime={setTime} />
       
       <header className='fixed z-50 top-0 left-0 w-full p-10 flex flex-row items-center justify-around'>
-        <div>{name}</div>
+        <span>{name}</span>
           <button onClick={togglePause}>
             {isPaused ? <FaPause /> : <FaPlay />}
           </button>
