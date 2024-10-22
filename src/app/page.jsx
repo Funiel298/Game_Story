@@ -83,7 +83,7 @@ export default function Home() {
           </button>
       </header>
 
-      <div className="content-area z-40">
+      <div className=" z-40">
         
         {renderContent()}
         <audio ref={audioRef} loop />

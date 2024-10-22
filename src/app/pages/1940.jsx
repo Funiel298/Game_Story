@@ -2,7 +2,7 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect, useRef } from "react"
-import Text from '@/component/1940/Text'
+import Images from '../../component/Images'
 
 export default function Forty() {
   const sectionRef = useRef(null)
@@ -42,10 +42,10 @@ export default function Forty() {
   return (
     <div className="no-scrollbar">
       <img className="w-screen h-screen object-cover fixed top-0 left-0 z-0" src="https://www.shutterstock.com/image-photo/old-newspaper-background-black-white-600nw-2476202121.jpg" alt="" />
-      <div ref={triggerRef} className="overflow-hidden ">
+      <div ref={triggerRef} className="overflow-hidden flex  flex-row ">
 
         {/* Menu */}
-        <div className="m-80 border-8 p-4 border-black">
+        <div ref={sectionRef} className="m-80  border-8 p-4 border-black">
           <h1 id="font-1940" className="text-7xl">Menu</h1>
           <div className="flex flex-col">
             {menulist.map((item)=>(
@@ -57,10 +57,15 @@ export default function Forty() {
 
         {/* FirstGame */}
 
-        <div>
-          
+        <div ref={sectionRef} className="w-1/3 object-contain h-screen">
+          <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/iki-renkli-kek-onecikan.jpg" alt="" />
+            
         </div>
-          
+
+        <div ref={sectionRef} className="w-full  object-cover h-screen">
+          <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/iki-renkli-kek-onecikan.jpg" alt="" />
+            
+        </div>
       </div>
     </div>
   )
