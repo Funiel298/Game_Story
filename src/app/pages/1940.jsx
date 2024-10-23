@@ -3,6 +3,7 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect, useRef } from "react"
 import Images from '../../component/Images'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Forty() {
   const sectionRef = useRef(null)
@@ -41,31 +42,33 @@ export default function Forty() {
 
   return (
     <div className="no-scrollbar">
-      <img className="w-screen h-screen object-cover fixed top-0 left-0 z-0" src="https://www.shutterstock.com/image-photo/old-newspaper-background-black-white-600nw-2476202121.jpg" alt="" />
+      <div className="blur-load ">
+        <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://www.shutterstock.com/image-photo/old-newspaper-background-black-white-600nw-2476202121.jpg" alt="" />
+      </div> 
       <div ref={triggerRef} className="overflow-hidden flex  flex-row ">
-
-        {/* Menu */}
-        <div ref={sectionRef} className="m-80  border-8 p-4 border-black">
-          <h1 id="font-1940" className="text-7xl">Menu</h1>
-          <div className="flex flex-col">
-            {menulist.map((item)=>(
-              <a id="font-p-1940" className="mt-1 text-lg" href={`#${item}`}>{item}</a>
-            ))}
-          </div>
+        <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
+            <div   className="w-[100vw] h-screen   flex ">
+              {/* Menu */}
+              <div ref={sectionRef} className="m-80  border-8 p-4 border-black">
+                <h1 id="font-1940" className="text-7xl">Menu</h1>
+                <div className="flex flex-col">
+                  {menulist.map((item)=>(
+                    <a id="font-p-1940" className="mt-1 text-lg" href={`#${item}`}>{item}</a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+              <h1 className="font-1950">Hello</h1>
+            </div>
+            <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+              <h1 className="font-1950">Hello</h1>
+            </div>
+            <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+              <h1 className="font-1950">Hello</h1>
+            </div>
         </div>
-
-
-        {/* FirstGame */}
-
-        <div ref={sectionRef} className="w-1/3 object-contain h-screen">
-          <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/iki-renkli-kek-onecikan.jpg" alt="" />
-            
-        </div>
-
-        <div ref={sectionRef} className="w-full  object-cover h-screen">
-          <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/iki-renkli-kek-onecikan.jpg" alt="" />
-            
-        </div>
+       
       </div>
     </div>
   )

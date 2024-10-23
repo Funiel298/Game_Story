@@ -1,5 +1,6 @@
 'use client'
 import gsap from "gsap"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect } from "react"
 import { useRef } from "react"
@@ -40,16 +41,24 @@ export default function Sixty() {
 
     return (
         <div>
-            
-            <div ref={triggerRef} className="overflow-hidden">
-                <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
-                {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
-                      <h1 classname="font-1960">Hello</h1>
-                    </div>
-                ))}
+            <div className="blur-load ">
+                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://t4.ftcdn.net/jpg/04/99/22/89/360_F_499228956_ApEv4RwC5CZskNWXZmknA3IpASIr3Ywg.jpg" alt="" />
+            </div> <div ref={triggerRef} className="overflow-hidden no-scrollbar">
+            <div className="w-[400vw] relative overflow-hidden flex bg-opacity-10 bg-black flex-row" ref={sectionRef}>
+                <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+                  <h1 classname="font-1950">Hello</h1>
+                </div>
+                <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+                  <h1 classname="font-1950">Hello</h1>
+                </div>
+                <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+                  <h1 classname="font-1950">Hello</h1>
+                </div>
+                <div   className="w-[100vw] h-screen  text-blue-500 flex justify-center items-center">
+                  <h1 classname="font-1950">Hello</h1>
                 </div>
             </div>
+          </div>
         </div>
     )
 }

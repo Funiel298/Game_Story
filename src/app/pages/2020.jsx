@@ -2,6 +2,7 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect } from "react"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useRef } from "react"
 
 export default function TwoTwenty() {
@@ -37,11 +38,13 @@ export default function TwoTwenty() {
 
     return (
         <div>
-            
+            <div className="blur-load ">
+                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://i.pinimg.com/originals/71/de/86/71de863e48b9f3c25419ae7f3ad3e5e7.jpg" alt="" />
+            </div> 
             <div ref={triggerRef} className="overflow-hidden">
             <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
                 {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
+                <div key={i} className="w-[100vw] h-screen  flex justify-center items-center">
                     <h1 id="font-2020">Hello</h1>
                 </div>
                 ))}

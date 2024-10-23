@@ -25,7 +25,7 @@ const Timeline = ({ time, setTime }) => {
                     variants={animationVariants} 
                     transition={{ duration: index*0.25}}
                 >
-                    <span className="font-light m-auto">
+                    <span className="font-light m-auto hover:text-white duration-200 ">
                         {marker}
                     </span>
                 </motion.button>

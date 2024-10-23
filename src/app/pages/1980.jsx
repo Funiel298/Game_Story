@@ -3,6 +3,7 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { useEffect } from "react"
 import { useRef } from "react"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Eighty() {
 
@@ -37,11 +38,12 @@ export default function Eighty() {
 
     return (
         <div>
+          <img className="w-screen bg-black opacity-70 h-screen object-cover fixed top-0 left-0 z-0" src="https://t4.ftcdn.net/jpg/02/14/34/73/360_F_214347350_KKVhELdCHRvr87Nrslhc7G3qn42w3UJE.jpg" alt="" />
             
             <div ref={triggerRef} className="overflow-hidden">
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
                 {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-[100vw] h-screen bg-red-200 text-blue-500 flex justify-center items-center">
+                    <div key={i} className="w-[100vw] h-screen  flex justify-center items-center">
                         <h1 classname="font-1980">Hello</h1>
                     </div>
                 ))}
