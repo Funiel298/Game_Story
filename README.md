@@ -1,1 +1,1 @@
-A bit lazy to continue this development, planned also to add backend but decided to simplify this project and limit only to frontend development wih react and next. if you r not boring to continue and like my playlist (i hope so), then for sure u can end this website
+Currently sure that project will be the one of the best which I have ever created! If you have ideas or sources to articles of games hystory then it will be great! I hope it will be used by Gamelab KBTU.
