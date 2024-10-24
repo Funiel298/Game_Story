@@ -39,7 +39,7 @@ export default function TwoTwenty() {
     return (
         <div>
             <div className="blur-load ">
-                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://i.pinimg.com/originals/71/de/86/71de863e48b9f3c25419ae7f3ad3e5e7.jpg" alt="" />
+                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://www.gamewallpapers.com/download.php?img=wallpaper_poppy_playtime_01_1920x1080.jpg" alt="" />
             </div> 
             <div ref={triggerRef} className="overflow-hidden">
             <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>

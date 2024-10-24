@@ -76,14 +76,14 @@ export default function Home() {
     <div className="flex w-full h-[90svh] justify-center">
       <TimeLine time={time} setTime={setTime} />
       
-      <header className='fixed z-50 top-0 left-0 w-full p-10 flex flex-row items-center justify-around'>
+      <header className='fixed z-50 mix-blend-difference  top-0 left-0 w-full p-10 flex flex-row items-center justify-around'>
         <span>{name}</span>
           <button onClick={togglePause}>
             {isPaused ? <FaPause /> : <FaPlay />}
           </button>
       </header>
 
-      <div className=" z-40">
+      <div className=" z-0">
         
         {renderContent()}
         <audio ref={audioRef} loop />

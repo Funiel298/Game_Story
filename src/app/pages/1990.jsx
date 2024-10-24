@@ -39,7 +39,7 @@ export default function Ninetee() {
     return (
         <div>
             <div className="blur-load ">
-                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://wallpapers.com/images/hd/sonic-2-emerald-green-map-edfd12i5rrte3uw5.jpg" alt="" />
+                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://images6.alphacoders.com/420/thumb-1920-420340.jpg" alt="" />
             </div>            
             <div ref={triggerRef} className="overflow-hidden">
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>

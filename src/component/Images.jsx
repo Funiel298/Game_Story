@@ -32,9 +32,9 @@ export default function Images() {
     return (
         <div id="smooth-wrapper" className="">
             <div id="smooth-content">
-                <img data-speed="2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 1" />
-                <img data-speed="1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 2" />
-                <img data-speed="0.5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 3" />
+                <img data-speed="5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 1" />
+                <img data-speed="10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 2" />
+                <img data-speed="5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt0oioYKxIZdiCR2ZTELp-ZISl0wHSy4Mp-w&s" alt="Image 3" />
             </div>
         </div>
     )

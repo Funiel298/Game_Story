@@ -39,7 +39,7 @@ export default function Seventy() {
     return (
         <div>
             <div className="blur-load ">
-                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://t3.ftcdn.net/jpg/00/14/49/92/360_F_14499247_vvBv2OdQVydJgOPPpPhTUW620p6lpWLb.jpg" alt="" />
+                <LazyLoadImage  loading="lazy" className="w-screen bg-black opacity-60 h-screen object-cover fixed top-0 left-0 z-0" src="https://images.freeimages.com/images/large-previews/efe/space-invaders-1243673.jpg" alt="" />
             </div> 
             <div ref={triggerRef} className="overflow-hidden">
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>

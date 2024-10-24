@@ -38,7 +38,7 @@ export default function Eighty() {
 
     return (
         <div>
-          <img className="w-screen bg-black opacity-70 h-screen object-cover fixed top-0 left-0 z-0" src="https://t4.ftcdn.net/jpg/02/14/34/73/360_F_214347350_KKVhELdCHRvr87Nrslhc7G3qn42w3UJE.jpg" alt="" />
+          <img className="w-screen bg-black opacity-70 h-screen object-cover fixed top-0 left-0 z-0" src="https://i.pinimg.com/736x/71/11/93/71119363f45e2e8391458b2df0e4d6f2.jpg" alt="" />
             
             <div ref={triggerRef} className="overflow-hidden">
                 <div className="w-[400vw] relative overflow-hidden flex flex-row" ref={sectionRef}>
